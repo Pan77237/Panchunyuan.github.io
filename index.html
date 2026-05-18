@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #f9f4f7;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 简历整体 */
+        .resume-container {
+            width: 900px;
+            background: #fff;
+            padding: 25px;
+        }
+
+        /* 粉色框线 + 模块分隔 */
+        .section {
+            border: 2px solid #f59fc8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+
+            /* 自动分页核心：保证模块不会被分页截断 */
+            page-break-inside: avoid;
+        }
+
+        /* 标题样式 */
+        .section-title {
+            color: #e05a99;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #f59fc8;
+        }
+
+        /* 基本信息布局 */
+        .info-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-left, .info-right {
+            width: 34%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .info-item {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #e05a99;
+            display: inline-block;
+            width: 95px;
+        }
+
+        /* 照片 */
+        .photo-box {
+            width: 24%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo {
+            width: 145px;
+            height: 185px;
+            object-fit: cover;
+            border: 2px solid #f59fc8;
+            border-radius: 6px;
+        }
+
+        /* 列表 */
+        .list-content {
+            padding-left: 22px;
+        }
+
+        .list-content li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+            word-wrap: break-word;
+        }
+
+        /* 链接视频 */
+        .link-box, .video-box {
+            margin-top: 8px;
+        }
+
+        a {
+            color: #e05a99;
+        }
+
+        video {
+            border: 2px solid #f59fc8;
+            border-radius: 6px;
+            margin-top: 5px;
+        }
+
+        /* ========== 打印分页核心样式 ========== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .resume-container {
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+            /* 强制模块不被分割 */
+            .section {
+                page-break-inside: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- 第一部分：基本信息 -->
+        <div class="section info-section">
+            <h2 class="section-title">基本信息</h2>
+            <div class="info-content">
+                <!-- 左侧两列信息 -->
+                <div class="info-left">
+                    <div class="info-item">
+                        <span class="label">姓名：</span>
+                        <span class="value">潘春圆</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">电话：</span>
+                        <span class="value">15161723295</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">性别：</span>
+                        <span class="value">女</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">邮箱：</span>
+                        <span class="value">748730148qq.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">民族：</span>
+                        <span class="value">汉</span>
+                    </div>
+                </div>
+                <div class="info-right">
+                    <div class="info-item">
+                        <span class="label">专业：</span>
+                        <span class="value">广播电视学</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">出生年月：</span>
+                        <span class="value">200708</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">毕业时间：</span>
+                        <span class="value">202906</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">政治面貌：</span>
+                        <span class="value">团员</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">毕业院校：</span>
+                        <span class="value">淮阴师范学院</span>
+                    </div>
+                </div>
+                <!-- 右侧照片 -->
+                <div class="photo-box">
+                    <img src="./zhaopian/微信图片_20260226095358_581_32.jpg" alt="个人照片" class="photo">
+                </div>
+            </div>
+        </div>
+
+        <!-- 第二部分：教育背景 -->
+        <div class="section">
+            <h2 class="section-title">教育背景</h2>
+            <ul class="list-content">
+                <li>在校系统研习影视编导、视听语言、新闻采编、短视频创作、节目策划与融媒体传播等专业核心课程，夯实广电领域理论根基。积极参与校园融媒体栏目摄制、毕业纪录片创作、影视后期剪辑等实践项目，熟练掌握拍摄运镜、脚本撰写、剪辑包装全流程技能，兼具内容策划思维与实景拍摄实操能力，具备全媒体时代影视传媒行业从业素养。</li>
+                <li>深耕广播电视与新媒体传播方向，主修影视节目制作、播音编导、新媒体运营、视觉传达等课程，学业成绩优异。在校主导多部校园纪实短片、剧情短视频拍摄制作，擅长镜头叙事、文案策划、视频剪辑及视听内容打磨，熟悉主流传媒行业工作模式。持续积累融媒体内容创作经验，兼具传统广电专业功底与新媒体流量内容创作思维，适配影视制作、栏目策划、新媒体编导等相关岗位。</li>
+            </ul>
+        </div>
+
+        <!-- 第三部分：实践经历 -->
+        <div class="section">
+            <h2 class="section-title">实践经历</h2>
+            <ul class="list-content">
+                <li>
+                    深度参与纪实纪录片全流程创作，独立完成选题调研、脚本撰写、分镜设计与采访策划工作。全程负责现场拍摄执行，熟练把控构图、运镜、景深、灯光收音等实景摄制细节，精准适配纪实影片真实、细腻的镜头风格。后期运用PR、AE、剪映完成海量素材筛选、精剪拼接、画面调色、字幕包装及音效混音，优化影片叙事节奏与转场逻辑，修正画面瑕疵、统一成片视觉风格。全程配合团队复盘修改、审核校对，最终成品成功上线校园融媒体平台展播。熟练掌握广电标准化摄制流程，具备独立外景拍摄、问题临场应变、成片质量把控的专业能力，精通纪实类视频从前期策划到后期输出的完整链路。
+                    <!-- 网页链接 -->
+                    <div class="link-box">
+                        相关网页：<a href="https://v.douyin.com/-PPbRU5WGRU/ Z@m.qR :5pm VlP:/ 12/27 " target="_blank">点击查看</a>
+                    </div>
+                    <!-- 视频插入 -->
+                    <div class="video-box">
+                        相关视频：
+                        <video controls width="300">
+                            <source src="./shipin/屏幕录制 2026-04-03 192430.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                    </div>
+                </li>
+                <li>负责校园官方融媒体平台内容深耕与日常内容产出，聚焦校园新闻、主题宣传、创意短视频三大内容板块。结合时政热点、校园动态及用户喜好完成选题策划、文案创作与内容脚本打磨，独立完成短视频、新闻短片的拍摄、剪辑、包装全流程工作。参与栏目专题策划研讨，协助搭建系列内容矩阵，严格把控内容调性、画面质感、传播节奏，保障内容输出的专业性与创新性。同步负责素材分类归档、内容数据复盘，根据播放量、互动量优化内容形式与创作思路。深耕全媒体内容创作与传播，兼顾传统广电内容严谨性与新媒体传播属性，具备高效选题、批量出片、内容运营及栏目统筹的综合能力，适配编导、内容策划、新媒体运营等岗位需求。</li>
+            </ul>
+        </div>
+
+        <!-- 第四部分：校园经历 -->
+        <div class="section">
+            <h2 class="section-title">校园经历</h2>
+            <ul class="list-content">
+                <li>任职校广播电视台栏目干事，负责校园广播栏目采编、播音录制与音频后期制作工作。结合校园热点、节日节点、主题教育策划栏目内容，独立撰写播音文稿、整理播报素材，完成日常栏目常态化更新。熟练使用专业音频设备及Audition软件，完成人声录制、降噪修音、配乐剪辑、音效合成等后期工作，优化播音音质与节目听觉效果。参与校园公益宣传、活动播报、校园新闻音频播报等专项工作，配合团队完成大型校园活动音频统筹与现场播报，累计参与制作栏目百余期。有效锻炼内容采编、语言表达、音频包装及现场统筹能力，贴合广电传媒岗位专业要求。
+                <li>参与校园迎新晚会、文化艺术节、毕业汇演等大型文艺活动编导统筹工作，主要负责舞台视频、开场短片、节目背景素材的策划与制作。根据活动主题与节目风格，独立完成视频脚本创作、素材剪辑、画面包装、字幕特效制作，适配舞台大屏播放标准。全程参与活动彩排、现场导播、画面切换调试，实时对接舞台、灯光、音响团队，把控整场活动视觉呈现效果。协助完成活动宣传短视频、精彩集锦成片制作，用于校园官方平台宣传推送。熟练掌握大型文体活动视觉内容制作与现场执行流程，具备较强的统筹协调、临场适配与团队协作能力，擅长活动视觉内容策划与成片输出。</li>
+            </ul>
+        </div>
+
+        <!-- 第五部分：技能与自我评价 -->
+        <div class="section">
+            <h2 class="section-title">技能与自我评价</h2>
+            <ul class="list-content">
+                <li>1.影视剪辑；熟练使用PR、剪映，可独立完成短视频、纪录片、宣传片剪辑、调色、字幕、片头片尾包装          
+2.拍摄摄像：掌握单反/微单摄影、摄像构图、灯光运用、新闻纪实拍摄、外景跟拍技巧
+3.文案编导：擅长新闻稿件、短视频脚本、节目策划、口播文案、专题文案撰写
+4.新媒体运营：熟悉公众号排版、抖音/视频号内容运营、选题策划、账号日常维护
+5.播音语言：具备基础播音主持、镜头表现力、口播配音、普通话规范表达能力</li>
+                <li>本人广播电视学专业，具备扎实的影视编导、视频拍摄、后期剪辑与新闻采编综合能力，熟悉广电行业内容生产逻辑与新媒体短视频传播模式。做事认真细心、责任心强，思维灵活有创意，擅长镜头语言表达与文案创作。拥有良好团队协作意识、沟通表达能力与抗压能力，对待拍摄、剪辑、策划相关工作严谨高效，愿意持续学习影视新媒体相关技能，快速适配广电、短视频、传媒宣传、新媒体运营等相关岗位工作。</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
